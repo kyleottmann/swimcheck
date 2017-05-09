@@ -1,0 +1,30 @@
+<form name="findAthleteSearch" ng-submit="findathlete()" novalidate>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/moment/moment.js"></script>
+	<script src="scripts/combodate.js"></script>
+	
+	<div>
+		<h1>Athlete Search</h1>
+		<label for="birthdate">Date of Birth</label>
+		<input name="birthdate" type="text" id="birthdate" data-format="YYYY-MM-DD" data-template="MMM DD YYYY"
+		ng-model="birthdate">
+	<script>
+		$(function(){
+    		$('#birthdate').combodate({
+        		minYear: 1975,
+        		maxYear: 2017
+    		});   
+		});
+	</script>
+	</div>
+ 
+ <div>
+   <label for="lastname">Lastname</label>
+   <input name="lastname" class="form-control" type="text" id="lastname" placeholder="Lastname"
+          ng-model="lastname">
+   </div>
+
+ <button type="submit" class="btn btn-primary">Find me!</button>
+ <br>
+ <br>
+</form>

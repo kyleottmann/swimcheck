@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<title>SwimCheck</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+
+<style>
+.button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="w3-container">
+  <h2>Athlete Search</h2>
+  <p>Select an athlete from the list below to check-in.</p>
+
+	<div ng-app = "clientApp" ng-controller = "JsondataCtrl">
+	
+		<table class="w3-table-all">
+		    <thead>
+		    	<tr class="w3-blue">
+		      		<th>Athlete</th>
+		  			<th>Age</th>
+		  			<th>Team</th>
+		  			<th></th>
+		      	</tr>
+		    </thead>
+	
+			<tr>
+				<td>{{ athletes.body[0].firstname }} {{ athletes.body[0].lastname }}</td>
+			  	<td>{{ athletes.body[0].athleteAge }}</td>
+			  	<td>{{ athletes.body[0].teamname }}</td>
+			  	<td><button class ="button" id = "btn1" value = "{{athletes.body[0].athleteNo}}" ng-href="#/" ng-click="redirect()">Check-In</button></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+
